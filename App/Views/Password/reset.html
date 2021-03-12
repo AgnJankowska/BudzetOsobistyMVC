@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Resetowanie hasła{% endblock %}
+
+{% block footer %}
+	
+	<script src="/js/hideShowPassword.js"></script>
+    <script src="/js/changePasswordValidate.js"></script>
+	
+{% endblock %}
+
+{% block body %}
+
+<div class ="row m-0">
+	<div class ="col-sm-12 col-md-8 col-lg-6 offset-md-1 mt-1 mb-4 mx-auto">
+		<div class="col-12 tile2a py-2">
+		<a href="/" class="back"><i class="icon-left-big"></i></a>
+		<span class="fontello_black mr-3"><i class="icon-key"></i></span>
+
+	{% if user.errors is not empty %}
+		<p>Errors:</p>
+		<ul>
+			{% for error in user.errors %}
+				<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+	
+    <form method="post" id="formPassword" action="/password/reset-password">
+	
+		<input type="hidden" name="token" value="{{ token }}">
+
+        <div class="form-group">
+            <label for="inputPassword">Podaj nowe hasło</label>
+            <input type="password" id="inputPassword" name="password" placeholder="nowe hasło" required class="form-control"/>
+			
+			<span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+        </div>
+
+        <button type="submit" class="btn btn-lg btn-danger btn-block my-4">Zresetuj hasło</button>
+	
+	</form>
+		
+		</div>
+	</div>
+</div>
+
+
+
+	
+{% endblock %}

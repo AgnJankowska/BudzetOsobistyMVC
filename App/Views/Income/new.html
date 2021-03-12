@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}Dodaj przychód{% endblock %}
+
+{% block footer %}
+	
+	{% if session.added_income %}
+        <script type="text/javascript"> 
+			window.onload = showModal;
+			function showModal(){
+			$("#exampleModal").modal();}
+		</script>
+    {% endif %}
+		<script src="/js/setDate.js"></script>
+	
+{% endblock %}
+
+{% block body %}
+
+<div class ="row m-0">
+	<div class ="col-sm-12 col-md-8 col-lg-6 offset-md-1 mt-1 mb-4 mx-auto">
+		<div class="col-12 tile2a py-2">
+	
+		<span class="fontello_black mr-3"><i class="icon-chart-line"></i></span>Dodaj przychód
+		
+		<div class="col-xs-10 mx-auto">	
+			<form action="/income/add" method="post">	
+		
+				<div class="form-group">				
+					<label for="amountOfMoney">Kwota</label>
+					<input class="form-control" name="amount" id="amountOfMoney" type="number" step="0.01" required/>
+				</div>
+		
+				<div class="form-group">	
+					<label for="currentDate">Data</label>				
+					<input class="form-control" name="date" id="currentDate" type="date" required/>
+				</div>
+
+				<div class="form-group">		
+					<label for="category">Kategoria</label>
+					<select name="category" class="form-control" id="category">
+						{% for income_category in inc %}
+							<option value={{ income_category.id }}> 
+								{{ income_category.name }}
+							</option>
+						{% endfor %}	
+					</select>
+				</div>		
+			
+				<div class="form-group">
+					<label for="comment">Dodatkowy komentarz</label>
+					<textarea class="form-control" id="comment" name="comment" cols="39" rows="1"placeholder="Opcjonalny opis..."></textarea>
+				</div>	
+			
+				<div class="col-12 py-2 mx-auto buttons">
+					
+				<button class="btn btn-lg btn-success btn-block my-4"><i class="icon-ok"></i>Dodaj</button>
+				
+				<a href="/"><div class="btn btn-lg btn-danger btn-block my-4"><i class="icon-cancel"></i>Anuluj</div></a>
+															
+				</div>	
+
+			</form>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle">Nowy przychód</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							Do bilansu został dodany nowy przychód.<br> Tak trzymaj i dodawaj wszystkie przychody!
+						</div>
+						<div class="modal-footer">
+							<a href="/expense/new"><button type="button" class="btn btn-success" data-dismiss="modal">Dodaj nowy przychód</button></a>
+							<a href="/"><button type="button" class="btn btn-danger">Powrót do menu</button></a>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

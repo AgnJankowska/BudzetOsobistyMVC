@@ -1,0 +1,71 @@
+[11-Mar-2021 19:05:23 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('k')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[11-Mar-2021 19:11:27 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Trying to get property 'id' of non-object'
+Stack trace: #0 C:\xampp\htdocs\App\Models\Expenses.php(36): Core\Error::errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(22): App\Models\Expenses::getExpenseAssignetToUser(NULL, NULL, NULL)
+#2 [internal function]: App\Controllers\Balance->indexAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\App\Controllers\Balance.php(53): Core\Controller->__call('index', Array)
+#5 C:\xampp\htdocs\Core\Router.php(77): App\Controllers\Balance->form()
+#6 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance')
+#7 {main}
+Thrown in 'C:\xampp\htdocs\App\Models\Expenses.php' on line 36
+[11-Mar-2021 19:11:41 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[11-Mar-2021 19:11:47 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Trying to get property 'id' of non-object'
+Stack trace: #0 C:\xampp\htdocs\App\Models\Tables.php(55): Core\Error::errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 55, Array)
+#1 C:\xampp\htdocs\App\Controllers\Expense.php(17): App\Models\Tables::getPayMethods(NULL)
+#2 [internal function]: App\Controllers\Expense->newAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Models\Tables.php' on line 55
+[11-Mar-2021 19:11:51 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('income/')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[11-Mar-2021 19:11:54 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Trying to get property 'id' of non-object'
+Stack trace: #0 C:\xampp\htdocs\App\Models\Tables.php(55): Core\Error::errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 55, Array)
+#1 C:\xampp\htdocs\App\Controllers\Expense.php(17): App\Models\Tables::getPayMethods(NULL)
+#2 [internal function]: App\Controllers\Expense->newAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Models\Tables.php' on line 55
+[11-Mar-2021 19:11:55 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[11-Mar-2021 19:11:55 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Trying to get property 'id' of non-object'
+Stack trace: #0 C:\xampp\htdocs\App\Models\Expenses.php(36): Core\Error::errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(22): App\Models\Expenses::getExpenseAssignetToUser(NULL, NULL, NULL)
+#2 [internal function]: App\Controllers\Balance->indexAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\App\Controllers\Balance.php(53): Core\Controller->__call('index', Array)
+#5 C:\xampp\htdocs\Core\Router.php(77): App\Controllers\Balance->form()
+#6 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance')
+#7 {main}
+Thrown in 'C:\xampp\htdocs\App\Models\Expenses.php' on line 36
+[11-Mar-2021 19:15:21 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('income/')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[11-Mar-2021 19:15:25 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Trying to get property 'id' of non-object'
+Stack trace: #0 C:\xampp\htdocs\App\Models\Tables.php(81): Core\Error::errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 81, Array)
+#1 C:\xampp\htdocs\App\Controllers\Income.php(17): App\Models\Tables::getIncomeCategory(NULL)
+#2 [internal function]: App\Controllers\Income->newAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('income/new')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Models\Tables.php' on line 81
+[11-Mar-2021 19:15:35 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('profile')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86

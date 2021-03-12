@@ -1,0 +1,3 @@
+Resetowanie hasla
+Kliknij link w celu ustanowienia nowego hasla do aplikacji Budzet osobisty
+{{ url }}

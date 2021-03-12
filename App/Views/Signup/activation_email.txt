@@ -1,0 +1,5 @@
+Link aktywacyjny do aplikacji Budzet osobisty
+
+Dziekuję za rejestracje w darmowej aplikacji Budzet osobisty. Kliknij link w celu aktywacji konta.
+
+{{ url }}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Resetowanie hasła{% endblock %}
+
+{% block body %}
+
+<div class ="row m-0">
+	<div class ="col-sm-12 col-md-8 col-lg-6 offset-md-1 mt-1 mb-4 mx-auto">
+		<div class="col-12 tile2a py-2">
+	
+		<a href="/login" class="back"><i class="icon-left-big"></i></a>
+		<span class="fontello_black mr-3"><i class="icon-key"></i></span>
+		<p>Zapomniałeś hasła?</p>
+
+			<div class="col-xs-10 mx-auto">
+				<form action="/password/request-reset" method="post" id="form-group">
+
+					<div class="form-group">
+						<input type="email" id="inputEmail" name="email" placeholder="adres email" autofocus value ="{{ email }}" class="form-control" required>
+					</div>
+					<div class="row ml-1 mb-3">
+						<span class="textSignin">Na podany adres zostanie wysłana wiadomość email</span>
+					</div>
+					<button type="submit" class="btn btn-lg btn-danger btn-block my-4">Wyślij wiadomość</button>
+	
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+
+
+	
+{% endblock %}

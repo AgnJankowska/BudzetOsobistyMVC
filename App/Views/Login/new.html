@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Logowanie{% endblock %}
+
+{% block footer %}
+	
+	<script src="/js/hideShowPassword.js"></script>		
+	
+{% endblock %}
+
+{% block body %}
+
+
+<div class ="row m-0">
+	<div class ="col-sm-12 col-md-8 col-lg-6 offset-md-1 mt-1 mb-4 mx-auto">
+	
+		{%  for message in flash_messages %}
+			<div class="alert-{{ message.type }} tile2a">
+				{{ message.body }}
+			</div>
+		{% endfor %}
+	
+		<div class="col-12 tile2a py-2">
+	
+		<a href="/" class="back"><i class="icon-left-big"></i></a>
+		<span class="fontello_black mr-3"><i class="icon-key"></i></span>
+		<p>Zaloguj się i zacznij korzystać z aplikacji</p>
+
+			<div class="col-xs-10 mx-auto">
+				<form action="/login/create" method="post" id="formSignup">
+
+					<div class="form-group">
+						<input type="email" id="inputEmail" name="email" placeholder="adres email" autofocus value ="{{ email }}" class="form-control">
+					</div>
+					
+					<div class="form-group">
+						<input type="password" id="inputPassword" name="password" placeholder="hasło" class="form-control">
+						
+						<span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+					</div>	
+					
+					<div class="row checkbox mx-2 textSignin">
+						<label>
+							<input type="checkbox" name="remember_me"> Zapamiętaj mnie
+						</label>
+					</div>
+
+					<button type="submit" class="btn btn-lg btn-danger btn-block my-4">Zaloguj się</button>
+					
+					
+					<div class="textSignin row ml-1">
+						<p><a href="/password/forgot">Zapomniałeś hasła?</a></P
+					</div>
+					
+				</form>			
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+{% endblock %}
