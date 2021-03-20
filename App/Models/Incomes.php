@@ -37,7 +37,6 @@ class Incomes extends \Core\Model {
 		
 		$stmt->execute();	
 		
-		$_SESSION['incomes'] = $stmt->fetchAll();
-		return array_sum(array_column($_SESSION['incomes'], 'amountSum'));
+		return $stmt->fetchAll();
 	}
 }

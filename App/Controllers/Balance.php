@@ -9,19 +9,33 @@ use \App\Models\Incomes;
 
 class Balance extends Authenticated {
 	
+	protected $range;
+	protected $showed;
+	
 	protected function before() {
 		parent::before();
-		$this->user = Auth::getUser();
-		unset($_SESSION['range']);
+		$this->range = false;
 	}
-
+	
+	protected function setExpenses() {
+		$this->expenses = Expenses::getExpenseAssignetToUser(Auth::getUser(), $this->date_start, $this->date_end);
+		$_SESSION['chartData'] = $this->expenses;
+		return $this->expenses;
+	}
+	
+	protected function setIncomes() {
+		$this->incomes = Incomes::getIncomeAssignetToUser(Auth::getUser(), $this->date_start, $this->date_end);
+		return $this->incomes;
+	}
+	
 	public function indexAction() {
 
-		$_SESSION['range'] = filter_input(INPUT_POST, 'range');		
+		$this->range = filter_input(INPUT_POST, 'range');		
 		$this->checkGivenDate();
-	
-		$expense_sum = Expenses::getExpenseAssignetToUser($this->user, $this->date_start, $this->date_end);
-		$income_sum = Incomes::getIncomeAssignetToUser($this->user, $this->date_start, $this->date_end);
+				
+		$expense_sum = array_sum(array_column($this->setExpenses(), 'amountSum'));	
+		$income_sum = array_sum(array_column($this->setIncomes(), 'amountSum'));
+		
 		$savings = $income_sum - $expense_sum;
 		
 		$expense_sum_format = number_format($expense_sum ,2, '.', ' ');
@@ -29,15 +43,19 @@ class Balance extends Authenticated {
 		$savings_format = number_format($savings ,2, '.', ' ');
 		
 		View::renderTemplate('Balance/index.html', [
+			'range' => $this->range,
+			'showed' => $this->showed,
 			'date_start' => $this->date_start,
 			'date_end' => $this->date_end,
+			'expenses' => $this->expenses,
+			'incomes' => $this->incomes,
 			'expense_sum' => $expense_sum_format,
 			'income_sum' => $income_sum_format,
 			'savings' => $savings_format
 		]);
 		
-		$_SESSION['range'] = true;
-		unset($_SESSION['showed']);
+		$this->range = true;
+		$this->showed = false;
 	}
 	
 	public function checkGivenDate() {
@@ -50,12 +68,11 @@ class Balance extends Authenticated {
 	}
 	
 	public function form() {
-		$_SESSION['showed'] = true;
+		$this->showed = true;
 		$this->index();
 	}
 
 	public function jsonEncodeAction() {
-		echo json_encode($_SESSION['expenses']);
+		echo json_encode($_SESSION['chartData']);
 	}
-	
 }

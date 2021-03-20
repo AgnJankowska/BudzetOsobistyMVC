@@ -7,27 +7,20 @@ use \App\Models\Tables;
 use \App\Models\Incomes;
 
 class Income extends Authenticated {
+
+	protected $added_income;
 	
 	protected function before() {
 		parent::before();
-		$this->user = Auth::getUser();
-		unset($_SESSION['added_income']);
-	}
-	
-	public function newAction() {
-		$incomesCategory = Tables::getIncomeCategory($this->user);
-
-		View::renderTemplate('Income/new.html', [
-			'inc' => $incomesCategory	
-		]);
+		$this->added_income = false;
 	}
 	
 	public function addAction() {
 		$incomes = new Incomes($_POST);
 		
-		if($incomes->addIncome($this->user)) {		
+		if($incomes->addIncome(Auth::getUser())) {		
 			//dodanie wydatku do bazy
-			$_SESSION['added_income'] = true;	
+			$this->added_income = true;
 			$this->newAction();
 		}
 			
@@ -35,5 +28,15 @@ class Income extends Authenticated {
 			//ponowne wyświeltenie pliku widoku new.html
 			$this->new();
 		}
+	}
+		
+	public function newAction() {
+		
+		$incomesCategory = Tables::getIncomeCategory(Auth::getUser());
+
+		View::renderTemplate('Income/new.html', [
+			'inc' => $incomesCategory,
+			'added_income' => $this->added_income
+		]);
 	}
 }

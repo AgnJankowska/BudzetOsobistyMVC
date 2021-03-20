@@ -1,0 +1,676 @@
+[15-Mar-2021 18:44:46 Europe/Berlin] Uncaught exception: 'Error' with message 'Using $this when not in object context'
+Stack trace: #0 C:\xampp\htdocs\Core\View.php(33): App\Controllers\Expense::getAddedExpense()
+#1 C:\xampp\htdocs\Core\View.php(12): Core\View::getTemplate('Expense/new.htm...', Array)
+#2 C:\xampp\htdocs\App\Controllers\Expense.php(25): Core\View::renderTemplate('Expense/new.htm...', Array)
+#3 [internal function]: App\Controllers\Expense->newAction()
+#4 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#6 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#7 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 45
+[15-Mar-2021 18:45:58 Europe/Berlin] Uncaught exception: 'Error' with message 'Undefined class constant 'added_expense''
+Stack trace: #0 C:\xampp\htdocs\Core\View.php(33): App\Controllers\Expense::getAddedExpense()
+#1 C:\xampp\htdocs\Core\View.php(12): Core\View::getTemplate('Expense/new.htm...', Array)
+#2 C:\xampp\htdocs\App\Controllers\Expense.php(25): Core\View::renderTemplate('Expense/new.htm...', Array)
+#3 [internal function]: App\Controllers\Expense->newAction()
+#4 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#6 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#7 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 45
+[15-Mar-2021 18:45:58 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 18:45:58 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined class constant 'added_expense' in C:\xampp\htdocs\App\Controllers\Expense.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Core\View.php(33): App\Controllers\Expense::getAddedExpense()
+#1 C:\xampp\htdocs\Core\View.php(12): Core\View::getTemplate('404.html', Array)
+#2 C:\xampp\htdocs\Core\Error.php(46): Core\View::renderTemplate('404.html')
+#3 [internal function]: Core\Error::exceptionHandler(Object(Exception))
+#4 {main}
+  thrown in C:\xampp\htdocs\App\Controllers\Expense.php on line 45
+[15-Mar-2021 18:52:10 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined variable: added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:52:10 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\Expense::getAddedExpense() in C:\xampp\htdocs\Core\View.php:33
+Stack trace:
+#0 C:\xampp\htdocs\Core\View.php(12): Core\View::getTemplate('500.html', Array)
+#1 C:\xampp\htdocs\Core\Error.php(46): Core\View::renderTemplate('500.html')
+#2 [internal function]: Core\Error::exceptionHandler(Object(ErrorException))
+#3 {main}
+  thrown in C:\xampp\htdocs\Core\View.php on line 33
+[15-Mar-2021 18:52:10 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 18:52:10 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controllers\Expense::getAddedExpense() in C:\xampp\htdocs\Core\View.php:33
+Stack trace:
+#0 C:\xampp\htdocs\Core\View.php(12): Core\View::getTemplate('404.html', Array)
+#1 C:\xampp\htdocs\Core\Error.php(46): Core\View::renderTemplate('404.html')
+#2 [internal function]: Core\Error::exceptionHandler(Object(Exception))
+#3 {main}
+  thrown in C:\xampp\htdocs\Core\View.php on line 33
+[15-Mar-2021 18:52:26 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined variable: added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:53:10 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Expense::$added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:53:10 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 18:53:11 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Expense::$added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:54:10 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Expense::$added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:54:11 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Expense::$added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:54:11 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Expense::$added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:55:16 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Expense::$added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:55:16 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Expense::$added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(26): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26, Array)
+#1 [internal function]: App\Controllers\Expense->newAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 26
+[15-Mar-2021 18:57:36 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined variable: added_expense'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Expense.php(12): Core\Error::errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\App\Controllers\Expense.php(24): App\Controllers\Expense->getAddedExpense()
+#2 [internal function]: App\Controllers\Expense->newAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('new', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('expense/new')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Expense.php' on line 12
+[15-Mar-2021 19:05:06 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 19:05:11 Europe/Berlin] Uncaught exception: 'Error' with message 'Class 'App\Controllers\Expenses' not found'
+Stack trace: #0 [internal function]: App\Controllers\Income->addAction()
+#1 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('add', Array)
+#3 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('income/add')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Income.php' on line 29
+[15-Mar-2021 19:05:50 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method addIncomeAction not found in controller.App\Controllers\Income'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Income.php(31): Core\Controller->__call('addIncome', Array)
+#1 [internal function]: App\Controllers\Income->addAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('add', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('income/add')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\Core\Controller.php' on line 27
+[15-Mar-2021 19:11:27 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method addAction not found in controller.App\Controllers\Income'
+Stack trace: #0 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('add', Array)
+#1 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('income/add')
+#2 {main}
+Thrown in 'C:\xampp\htdocs\Core\Controller.php' on line 27
+[15-Mar-2021 20:07:02 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'array_column() expects parameter 1 to be array, null given'
+Stack trace: #0 [internal function]: Core\Error::errorHandler(2, 'array_column() ...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(28): array_column(NULL, 'amountSum')
+#2 [internal function]: App\Controllers\Balance->indexAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('index', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 28
+[15-Mar-2021 20:11:08 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$expenses'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(22): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 22, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(29): App\Controllers\Balance->getExpenses()
+#2 [internal function]: App\Controllers\Balance->indexAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('index', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 22
+[15-Mar-2021 20:19:37 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$expense_sum'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(37): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 37, Array)
+#1 [internal function]: App\Controllers\Balance->indexAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('index', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 37
+[15-Mar-2021 20:23:06 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined variable: expenses'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(24): Core\Error::errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 24, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(37): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->indexAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('index', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 24
+[15-Mar-2021 20:23:35 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$expense_sum'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(43): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 43, Array)
+#1 [internal function]: App\Controllers\Balance->indexAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('index', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 43
+[15-Mar-2021 20:23:59 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$expense_sum'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(45): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 45, Array)
+#1 [internal function]: App\Controllers\Balance->indexAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('index', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 45
+[15-Mar-2021 20:24:27 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'json_encode() expects at least 1 parameter, 0 given'
+Stack trace: #0 [internal function]: Core\Error::errorHandler(2, 'json_encode() e...', 'C:\\xampp\\htdocs...', 80, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(80): json_encode()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 80
+[15-Mar-2021 20:25:25 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(79): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:27:09 Europe/Berlin] Uncaught exception: 'ParseError' with message 'syntax error, unexpected ';', expecting ')''
+Stack trace: #0 C:\xampp\htdocs\vendor\composer\ClassLoader.php(344): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 [internal function]: spl_autoload_call('App\\Controllers...')
+#3 C:\xampp\htdocs\Core\Router.php(70): class_exists('App\\Controllers...')
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 35
+[15-Mar-2021 20:27:10 Europe/Berlin] Uncaught exception: 'ParseError' with message 'syntax error, unexpected ';', expecting ')''
+Stack trace: #0 C:\xampp\htdocs\vendor\composer\ClassLoader.php(344): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 [internal function]: spl_autoload_call('App\\Controllers...')
+#3 C:\xampp\htdocs\Core\Router.php(70): class_exists('App\\Controllers...')
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 35
+[15-Mar-2021 20:27:23 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(75): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:28:07 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(75): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:28:59 Europe/Berlin] Uncaught exception: 'ParseError' with message 'syntax error, unexpected 'echo' (T_ECHO)'
+Stack trace: #0 C:\xampp\htdocs\vendor\composer\ClassLoader.php(344): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 [internal function]: spl_autoload_call('App\\Controllers...')
+#3 C:\xampp\htdocs\Core\Router.php(70): class_exists('App\\Controllers...')
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 77
+[15-Mar-2021 20:29:15 Europe/Berlin] Uncaught exception: 'Exception' with message 'Method expensesAction not found in controller.App\Controllers\Balance'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(78): Core\Controller->__call('expenses', Array)
+#1 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\Core\Controller.php' on line 27
+[15-Mar-2021 20:29:47 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:29:48 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(75): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:29:52 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(75): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:30:41 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(76): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:30:44 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:30:44 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(76): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:30:50 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(76): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:30:57 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(76): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:31:01 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(76): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:31:59 Europe/Berlin] Uncaught exception: 'ParseError' with message 'syntax error, unexpected 'echo' (T_ECHO)'
+Stack trace: #0 C:\xampp\htdocs\vendor\composer\ClassLoader.php(344): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 [internal function]: spl_autoload_call('App\\Controllers...')
+#3 C:\xampp\htdocs\Core\Router.php(70): class_exists('App\\Controllers...')
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 76
+[15-Mar-2021 20:32:00 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:32:01 Europe/Berlin] Uncaught exception: 'ParseError' with message 'syntax error, unexpected 'echo' (T_ECHO)'
+Stack trace: #0 C:\xampp\htdocs\vendor\composer\ClassLoader.php(344): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 [internal function]: spl_autoload_call('App\\Controllers...')
+#3 C:\xampp\htdocs\Core\Router.php(70): class_exists('App\\Controllers...')
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/index')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 76
+[15-Mar-2021 20:32:06 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(75): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:32:12 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:32:12 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$date_start'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(21): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\App\Controllers\Balance.php(75): App\Controllers\Balance->setExpenses()
+#2 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#3 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#5 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#6 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 21
+[15-Mar-2021 20:33:02 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:34:46 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:35:21 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:35:21 Europe/Berlin] Uncaught exception: 'Error' with message 'Using $this when not in object context'
+Stack trace: #0 [internal function]: App\Controllers\Balance::jsonEncodeAction()
+#1 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#3 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 75
+[15-Mar-2021 20:35:34 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:35:34 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$expenses'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(75): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 75
+[15-Mar-2021 20:37:05 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:37:05 Europe/Berlin] Uncaught exception: 'ErrorException' with message 'Undefined property: App\Controllers\Balance::$expenses'
+Stack trace: #0 C:\xampp\htdocs\App\Controllers\Balance.php(75): Core\Error::errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 75, Array)
+#1 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#2 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 75
+[15-Mar-2021 20:37:33 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:37:33 Europe/Berlin] Uncaught exception: 'Error' with message 'Call to undefined function App\Controllers\setExpenses()'
+Stack trace: #0 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#1 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#3 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 75
+[15-Mar-2021 20:37:39 Europe/Berlin] Uncaught exception: 'ParseError' with message 'syntax error, unexpected ';', expecting ')''
+Stack trace: #0 C:\xampp\htdocs\vendor\composer\ClassLoader.php(344): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers...')
+#2 [internal function]: spl_autoload_call('App\\Controllers...')
+#3 C:\xampp\htdocs\Core\Router.php(70): class_exists('App\\Controllers...')
+#4 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance')
+#5 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 75
+[15-Mar-2021 20:37:41 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:37:49 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:37:50 Europe/Berlin] Uncaught exception: 'Error' with message 'Call to undefined function App\Controllers\setExpenses()'
+Stack trace: #0 [internal function]: App\Controllers\Balance->jsonEncodeAction()
+#1 C:\xampp\htdocs\Core\Controller.php(23): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\Core\Router.php(77): Core\Controller->__call('jsonEncode', Array)
+#3 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('balance/jsonEnc...')
+#4 {main}
+Thrown in 'C:\xampp\htdocs\App\Controllers\Balance.php' on line 75
+[15-Mar-2021 20:39:38 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:40:35 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:41:06 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:42:40 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:42:53 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:43:03 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:43:36 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:43:53 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:44:17 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:44:49 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:45:00 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:45:12 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:45:23 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:45:32 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:45:42 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:45:56 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:49:50 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:50:12 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:54:31 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:55:09 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:55:20 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:55:36 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 20:56:27 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:06:03 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:16:50 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:16:56 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:17:09 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:17:18 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:17:35 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:18:07 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:18:21 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:19:06 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:20:02 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:20:46 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:20:56 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:21:29 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:22:36 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:22:54 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:25:34 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:26:19 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:26:40 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:28:20 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:30:44 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:32:10 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:32:57 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:33:19 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:33:38 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:34:16 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:35:31 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:36:44 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:39:05 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86
+[15-Mar-2021 21:44:21 Europe/Berlin] Uncaught exception: 'Exception' with message 'No route matched.'
+Stack trace: #0 C:\xampp\htdocs\public\index.php(33): Core\Router->dispatch('favicon.ico')
+#1 {main}
+Thrown in 'C:\xampp\htdocs\Core\Router.php' on line 86

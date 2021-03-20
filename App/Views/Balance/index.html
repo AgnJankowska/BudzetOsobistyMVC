@@ -4,16 +4,15 @@
 {% block footer %}
 	<script src="/js/script2.js"></script>	
 	<script src="https://www.gstatic.com/charts/loader.js"></script> 
-	<script src="/js/pieChart.js"></script>
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
 	integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
 	crossorigin="anonymous"></script>
 	
-	
-	{% if not session.showed %}
+	{% if not showed %}
 		<script type="text/javascript"> document.form.submit() </script>
 	{% endif %}
+	<script src="/js/pieChart.js"></script>
 	
 {% endblock %}
 
@@ -38,22 +37,22 @@
 							<select class="form-control col-7 mb-3" name="range" id="range" onChange="setDates();">  
 									
 									<option value="1"  
-									{% if session.range==1 %}
+									{% if range==1 %}
 										selected
 									{% endif %}>bieżący miesiąc</option>
 									
 									<option value="2" 
-									{% if session.range==2 %}
+									{% if range==2 %}
 										selected
 									{% endif %}>poprzedni miesiąc</option>
 										
 									<option value="3" 
-									{% if session.range==3 %}
+									{% if range==3 %}
 										selected
 									{% endif %}>bieżący rok</option>
 										
 									<option value="4" 
-									{% if session.range==4 %}
+									{% if range==4 %}
 										selected
 									{% endif %}>niestandardowy czas</option>
 							</select>
@@ -97,7 +96,7 @@
 								  <div class="modal-footer">
 									
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>								
-									<input class="btn btn-primary" type="submit" name="wyslanie" value="Dodaj"/>
+									<input class="btn btn-primary" type="submit" name="wyslanie" value="Pokaż"/>
 								</form>
 								  </div>
 								</div>
@@ -121,7 +120,7 @@
 									</tr>
 								</thead>
 								<tbody>						
-								 {% for income in session.incomes %}
+								 {% for income in incomes %}
 									<tr><td>{{ income.name }}</td><td>{{ income.amountSum }}</td></tr>
 								 {% endfor %}
 								
@@ -152,12 +151,12 @@
 									</tr>
 								</thead>
 								<tbody>
-								 {% for expense in session.expenses %}
+								 {% for expense in expenses %}
 									<tr><td>{{ expense.name }}</td><td>{{ expense.amountSum }}</td></tr>
 								 {% endfor %}
 								 
 								<tr class="table_sum">
-									<td>Suma przychodów</td>
+									<td>Suma wydatków</td>
 									<td>
 										{{ expense_sum }}
 									</td>
@@ -166,13 +165,12 @@
 							</table>
 						</div>
 						
-						{% if session.expenses is not empty %}
-							<div style="width: 400px" class="mx-auto" id="piechart">Kont</div>
+						{% if expenses is not empty %}
+							<div style="width: 430px" class="mx-auto" id="piechart"></div>
 						{% endif %}
 						
 						<h2 class="head2 mx-auto mt-4 py-3">
-							<span class="mr-3"><i class="icon-balance-scale"></i></span>Bilans
-							
+							<span class="mr-3"><i class="icon-balance-scale"></i></span>Bilans	
 						</h2>
 
 						

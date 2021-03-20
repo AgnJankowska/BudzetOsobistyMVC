@@ -2,6 +2,7 @@
 namespace Core;
 use \App\Auth;
 use \App\Flash;
+use \App\Controllers\Expense;
 
 class View
 {
@@ -23,9 +24,11 @@ class View
             $twig = new \Twig\Environment($loader);
 			//dodajemt wszystkie zmienne sesyjne do użycia w bibliotece TWIG
 			$twig->addGlobal('session', $_SESSION);
+			
 			//dodajemy metodę z jednej z klas którą chcemy użyć w pliku widoku
 			$twig->addGlobal('current_user', Auth::getUser());
-			$twig->addGlobal('flash_messages', Flash::getMessages());
+			$twig->addGlobal('flash_messages', Flash::getMessages());	
+			
         }
 
         return $twig->render($template, $args1);

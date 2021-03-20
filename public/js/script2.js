@@ -1,26 +1,13 @@
+let n =  new Date();
+let currentDay = n => n.getDate();
+let currentMonth = n => n.getMonth() + 1;
+let currentYear = n => n.getFullYear();
+
 window.onload = setDatesStart();
-
-//Start and end of balance
-function currentDay() {
-	n =  new Date();
-	let d = n.getDate();
-	return d}
 	
-function currentMonth() {
-	n =  new Date();
-	let m = n.getMonth() + 1;
-	return m}
-
-function currentYear() {
-	n =  new Date();
-	let y = n.getFullYear();
-	return y}
-
 function isThisYearLeap(year) {
-  if ((year % '4' == '0' && year % '100' != '0') || year % '400' == '0')
-    return true;
-  else
-    return false; }
+  return((year % '4' == '0' && year % '100' != '0') || year % '400' == '0') ? true : false; 
+}
 
 function checkNumberOfDays (year, month) {
  switch (month) {
@@ -45,71 +32,79 @@ function checkNumberOfDays (year, month) {
    }
 }
 
+
 function setStartDate(start) {
+	let d1;
+	let m1;
+	let y1;
+	
 	if (start==1){
-		d = '01';
-		m = currentMonth();
-			if(m<10) m = '0'+m;
-		y = currentYear();
-		return y + "-" + m + "-" + d}
+		d1 = '01';
+		m1 = currentMonth(n);
+			if(m1<10) m1 = '0'+m1;
+		y1 = currentYear(n);
+	return y1 + "-" + m1 + "-" + d1}
 	
 	else if (start==2){
-		d = '01';
-		if(currentMonth()==1){
-			m = 12;
-			y = currentYear()-1;
+		d1 = '01';
+		if(currentMonth(n)==1){
+			m1 = 12;
+			y1 = currentYear()-1;
 		}
 		else{
-			m = currentMonth()-1;
-			if(m<10) m = '0'+m;
-			y = currentYear();
+			m1 = currentMonth(n)-1;
+			if(m1<10) m1 = '0'+m1;
+			y1 = currentYear(n);
 		}
-		return y + "-" + m + "-" + d}
+		return y1 + "-" + m1 + "-" + d1}
 		
 	else if (start==3){
-		d = '01';
-		m = '01';
-		y = currentYear();
-		return y + "-" + m + "-" + d}
+		d1 = '01';
+		m1 = '01';
+		y1 = currentYear(n);
+		return y1 + "-" + m1 + "-" + d1}
 		
 	else 
 		return ''
 }
 
 function setEndDate(end) {
+	let d2;
+	let m2;
+	let y2;
+	
 	if (end==1){
-		d = currentDay();
-			if(d<10) d = '0'+d;
-		m = currentMonth();
-			if(m<10) m = '0'+m;
-		y = currentYear();
-		return y + "-" + m + "-" + d}
+		d2 = currentDay(n);
+			if(d2<10) d2 = '0'+d2;
+		m2 = currentMonth(n);
+			if(m2<10) m2 = '0'+m2;
+		y2 = currentYear(n);
+		return y2 + "-" + m2 + "-" + d2}
 	
 	else if (end==2){
 			
-		if( currentMonth()==1){
-			m = 12
-			y = currentYear()-1;
-			d = checkNumberOfDays(y, m);
+		if( currentMonth(n)==1){
+			m2 = 12
+			y2 = currentYear(n)-1;
+			d2 = checkNumberOfDays(y2, m2);
 		}
 		
 		else{
-			m = currentMonth()-1;
-			y = currentYear();
-			d = checkNumberOfDays(y, m);
-			
+			m2 = currentMonth(n)-1;
+			y2 = currentYear(n);
+			d2 = checkNumberOfDays(y2, m2);	
 		}
 		
-		if(m<10) m = '0'+m;
-		return y + "-" + m + "-" + d}
+		if(m2<10) m2 = '0'+m2;
+		return y2 + "-" + m2 + "-" + d2}
 		
 	else if (end==3){
-		d = currentDay();
-			if(d<10) d = '0'+d;
-		m = currentMonth();
-			if(m<10) m = '0'+m;
-		y = currentYear();
-		return y + "-" + m + "-" + d}
+		d2 = currentDay(n);
+			if(d2<10) d2 = '0'+d2;
+		m2 = currentMonth(n);
+			if(m2<10) m2 = '0'+m2;
+		y2 = currentYear(n);
+		return y2 + "-" + m2 + "-" + d2}
 		
 	else 
 		return ''

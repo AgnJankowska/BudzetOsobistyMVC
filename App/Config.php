@@ -3,9 +3,9 @@ namespace App;
 
 class Config {
     const DB_HOST = 'localhost';  //host
-    const DB_NAME = 'agnies18_homebudget';   //name
-    const DB_USER = 'agnies18_HomeBudgetAdmin';       //user
-    const DB_PASSWORD = 'xxx';       //password
+    const DB_NAME = 'mvclogin';   //name
+    const DB_USER = 'root';       //user
+    const DB_PASSWORD = '';       //password
 	
 	const SHOW_ERRORS = false;    //pokazywanie wiadomości o błędach
 	

@@ -8,28 +8,19 @@ use \App\Models\Expenses;
 
 class Expense extends Authenticated {
 	
+	protected $added_expense;
+	
 	protected function before() {
 		parent::before();
-		$this->user = Auth::getUser();
-		unset($_SESSION['added_expense']);
-	}
-	
-	public function newAction() {
-		$payMethod = Tables::getPayMethods($this->user);
-		$expensesCategory = Tables::getExpenseCategory($this->user);
-
-		View::renderTemplate('Expense/new.html', [
-			'pay' => $payMethod,
-			'exp' => $expensesCategory	
-		]);
+		$this->added_expense = false;
 	}
 	
 	public function addAction() {
 		$expenses = new Expenses($_POST);
 		
-		if($expenses->addExpense($this->user)) {		
+		if($expenses->addExpense(Auth::getUser())) {		
 			//dodanie wydatku do bazy
-			$_SESSION['added_expense'] = true;	
+			$this->added_expense = true;
 			$this->newAction();
 		}
 			
@@ -37,5 +28,17 @@ class Expense extends Authenticated {
 			//ponowne wyświeltenie pliku widoku new.html
 			$this->new();
 		}
+	}
+		
+	public function newAction() {
+		
+		$payMethod = Tables::getPayMethods(Auth::getUser());
+		$expensesCategory = Tables::getExpenseCategory(Auth::getUser());
+
+		View::renderTemplate('Expense/new.html', [
+			'pay' => $payMethod,
+			'exp' => $expensesCategory,
+			'added_expense' => $this->added_expense
+		]);
 	}
 }

@@ -27,16 +27,14 @@ function drawChart1() {
 			};
 
 			var options = {
-				'width':400, 
-				'height':400,
-				is3D: true,
+				'width':420, 
+				'height':300,
 				backgroundColor: 'white',
-				legend: {position: 'none', alignment:'center' , textStyle: {color: 'black', fontSize: 14}},
+				legend: {alignment:'center' , textStyle: {color: 'black', fontSize: 14}},
 				chartArea:{width:'100%',height:'100%'},
-				pieSliceText: 'label' ,
 				pieSliceBorderColor: 'grey',
-				sliceVisibilityThreshold: .07,
-				pieSliceTextStyle: {color:'white', fontSize: 16}
+				sliceVisibilityThreshold: .05,
+				pieSliceTextStyle: {color:'white', fontSize: 14}
 			};
 
 			var chart = new google.visualization.PieChart(document.getElementById('piechart'));

@@ -39,7 +39,6 @@ class Expenses extends \Core\Model {
 		
 		$stmt->execute();	
 		
-		$_SESSION['expenses'] = $stmt->fetchAll();
-		return array_sum(array_column($_SESSION['expenses'], 'amountSum'));
+		return $stmt->fetchAll();
 	}
 }
