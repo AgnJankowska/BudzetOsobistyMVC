@@ -10,7 +10,9 @@
 			$("#exampleModal").modal();}
 		</script>
     {% endif %}
-		<script src="/js/setDate.js"></script>
+		<script src="/js/setDate.js"></script>		
+		<script src="/js/scriptSettings.js"></script>	
+
 	
 {% endblock %}
 
@@ -18,7 +20,8 @@
 
 <div class ="row m-0">
 	<div class ="col-sm-12 col-md-8 col-lg-6 offset-md-1 mt-1 mb-4 mx-auto">
-		<div class="col-12 tile2a py-2">	
+		<div class="col-12 tile2a py-2">
+		<a href="/" class="back"><i class="icon-left-big"></i></a>		
 	
 		<span class="fontello_black mr-3"><i class="icon-credit-card"></i></span>Dodaj wydatek
 		
@@ -27,12 +30,12 @@
 		
 				<div class="form-group">				
 					<label for="amountOfMoney">Kwota</label>
-					<input class="form-control" name="amount" id="amountOfMoney" type="number" step="0.01" required/>
+					<input class="form-control" name="amount" id="amountOfMoney" type="number" step="0.01" required onChange="sendAmountAndCategory();"/>
 				</div>
 		
 				<div class="form-group">	
 					<label for="currentDate">Data</label>				
-					<input class="form-control" name="date" id="currentDate" type="date" required/>
+					<input class="form-control" name="date" id="currentDate" type="date" required onChange="sendAmountAndCategory();"/>
 				</div>
 				
 				<div class="form-group">		
@@ -47,7 +50,7 @@
 
 				<div class="form-group">		
 					<label for="category">Kategoria</label>
-					<select name="category" class="form-control" id="category">
+					<select name="category" class="form-control" id="category" onChange="sendAmountAndCategory();">
 						{% for expense_category in exp %}
 							<option value={{ expense_category.id }}> 
 								{{ expense_category.name }}
@@ -61,12 +64,18 @@
 				<textarea class="form-control" id="comment" name="comment" cols="39" rows="1"placeholder="Opcjonalny opis..."></textarea>
 				</div>	
 			
-				<div class="col-12 py-2 mx-auto buttons">
-					
-				<button class="btn btn-lg btn-success btn-block my-4"><i class="icon-ok"></i>Dodaj</button>
+				<div class="tableLimit">
+					<div id="limit0" class="row"></div>			
+					<div id="limit1" class="row"></div>			
+					<div id="limit2" class="row"></div>			
+					<div id="limit3" class="row"></div>			
+					<div id="limit4" class="row"></div>			
+				</div>
+
+				<div class="col-12 py-2 mx-auto buttons">				
+					<button class="btn btn-lg btn-success btn-block my-4"><i class="icon-ok"></i>Dodaj</button>
 				
-				<a href="/"><div class="btn btn-lg btn-danger btn-block my-4"><i class="icon-cancel"></i>Anuluj</div></a>
-															
+					<a href="/"><div class="btn btn-lg btn-danger btn-block my-4"><i class="icon-cancel"></i>Anuluj</div></a>														
 				</div>	
 
 			</form>
@@ -90,7 +99,8 @@
 						</div>
 					</div>
 				</div>
-			</div>		
+			</div>
+	
 		</div>
 		</div>
 	</div>

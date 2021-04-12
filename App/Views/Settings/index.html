@@ -1,0 +1,492 @@
+{% extends 'base.html' %}
+{% block title %}ustawienia{% endblock %}
+
+{% block footer %}
+	<script src="/js/hideShowPassword.js"></script>	
+	<script src="/js/signUpValidate.js"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class ="row m-0">
+	<div class ="col-sm-12 col-md-8 col-lg-6 offset-md-1 mt-1 mb-4 mx-auto">	
+	
+	{%  for message in flash_messages %}
+		<div class="alert-{{ message.type }}">
+			{{ message.body }}
+		</div>
+	{% endfor %}
+		
+	<div class="col-12 tile2a px-0">
+		<a href="/" class="back"><i class="icon-left-big"></i></a>
+				
+		<div class="px-3">
+		<span class="fontello_black mr-3"><i class="icon-cogs"></i></span>Ustawienia	
+			<div class="col-xs-10 mx-auto my-4">	
+				<div class="accordion" id="accordionexample">
+	
+<!-- USERS profile-->
+				  <div class="card">
+					<div class="card-header" id="headingone">
+					  <h2 class="mb-0">
+						<button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseone" aria-expanded="false" aria-controls="collapseone">
+						  Użytkownik
+						</button>
+					  </h2>
+					</div>								
+					
+					<div id="collapseone" class="collapse {% if show1 %} show {% endif %}" aria-labelledby="headingone" data-parent="#accordionexample">
+					  <div class="card-body">
+					  
+							<table class="table table-sm table-hover table-borderless mb-2">
+								<tr>
+									<td class="table-settings">Zmień imię</td>	
+									<td class="table-settings2">
+									<form method="post" action="/settings/updateName" id="changeName">
+											
+										<div class="form-group mb-2">		
+											<input type="text" id="inputName" name="newName" placeholder="nowe imię" required class="form-control"/>
+										</div>
+											
+										<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+									</form>
+									</td>
+								</tr>
+								
+								<tr>
+									<td class="table-settings">Zmień hasło</td>	
+									<td class="table-settings2">
+									<form method="post" action="/settings/updatePassword" id="formSignup">
+											
+										<div class="form-group mb-0">		
+											<input type="password" id="inputPassword" name="password" placeholder="nowe hasło" required class="form-control"/>
+												
+											<span toggle="#inputPassword" class="fa fa-fw fa-eye field-icon toggle-password"></span>						
+										</div>
+											
+										<div class="row ml-1 mb-3">
+											<span class="textSignin">Minimum 6 znaków w tym cyfra i litera</span>
+										</div>
+										<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+									</form>
+									</td>
+								</tr>
+
+
+						</table>
+					</div>
+				</div>
+				</div>
+									
+<!-- INCOMES category -->
+				  <div class="card">
+					<div class="card-header" id="headingtwo">
+					  <h2 class="mb-0">
+						<button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="false" aria-controls="collapsetwo">
+						  Kategorie przychodów
+						</button>
+					  </h2>
+					</div>
+					
+					<div id="collapsetwo" class="collapse {% if show2 %} show {% endif %}" aria-labelledby="headingtwo" data-parent="#accordionexample">
+					  <div class="card-body">
+						
+						<table class="table table-sm table-hover table-borderless mb-2">
+							{% for inccategory in inc %}
+								<tr>
+									<td class="table-settings"> {{ inccategory.name }}
+									</td>					
+									<td class="table-settings2">
+									
+										<button type="button" class="btn btn-light" data-toggle="modal" data-target="#editmodal2{{ inccategory.id }}">
+											<i class="icon-pencil-alt"></i>
+										</button>
+										
+										<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal2{{ inccategory.id }}">
+											<i class="icon-trash"></i>
+										</button>
+									</td>
+								</tr>
+							
+								<!-- modal edit-->
+								<div class="modal fade" id="editmodal2{{ inccategory.id }}" tabindex="-1" aria-labelledby="editmodallabel" aria-hidden="true">
+								  <div class="modal-dialog">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="editmodallabel">Zmień nazwę</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="close">
+										  <span aria-hidden="true">&times;</span>
+										</button>
+									  </div>
+									  <div class="modal-body">
+										<div class="modal-text">Podaj nową nazwę:
+										
+										<form action="/settings/updateIncomesCategory" method="post" >
+											<input type="hidden" value={{ inccategory.id }} name="currentId">
+											<input type="text" class="form-control" placeholder="nowa nazwa" name="newName" required>
+											<br>
+											Pamietaj, że wprowadzone zmiany wpłyną na już zapisane wydatki i przychody. 
+											</div>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+										<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+										</form>
+									  </div>
+									</div>
+								  </div>
+								</div>	
+								
+								<!-- modal delete-->
+								<div class="modal fade" id="deletemodal2{{ inccategory.id }}" tabindex="-1" aria-labelledby="deletemodallabel" aria-hidden="true">
+								  <div class="modal-dialog">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="deletemodallabel">Usuń kategorię</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="close">
+											 <span aria-hidden="true">&times;</span>
+										</button>	
+									  </div>
+									  <div class="modal-body modal-text">
+										<form action="/settings/deleteIncomesCategory" method="post" >
+										  <input type="hidden" value={{ inccategory.id }} name="deletedId">
+										  Usunięcie może wywołać zmiany w już zapisanych wydatkach i przychodach. <br>Możesz <b>usunąć</b> całą kategorię wraz ze wszystkimi przychodami lub <b>przenieść</b> przychody do innej kategorii.
+										  										  
+									  </div>
+									  <div class="modal-footer">
+										  <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+										  <input class="btn btn-primary" type="submit" value="Usuń"/>
+										</form>
+										
+										<form action="/settings/replaceIncomeCategory" method="post" >
+											<input type="hidden" value={{inccategory.id}} name="deletedId">
+											<input class="btn btn-primary" type="submit" value="Przenieś"/>
+										</form>
+										
+									  </div>
+									</div>
+								  </div>
+								</div>
+							{% endfor %}
+						</table>
+						
+						<button type="table-settings" class="btn btn-light" data-toggle="modal" data-target="#addmodal2">
+							<i class="icon-plus"></i> Dodaj nową kategorię
+						</button>
+	
+						<!-- modal add new-->
+						<div class="modal fade" id="addmodal2" tabindex="-1" aria-labelledby="addmodallabel" aria-hidden="true">
+						  <div class="modal-dialog">
+							<div class="modal-content">
+							  <div class="modal-header">
+								<h5 class="modal-title" id="addmodallabel">Dodaj nową kateogrię przychodów</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+							  </div>
+							  <div class="modal-body">
+								<div class="modal-text">Podaj nazwę nowej kategorii przychodów:
+								  <form action="/settings/addIncomesCategory" method="post" >
+									<input type="text" class="form-control" placeholder="nazwa" name="newName" required>
+								</div>
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+								<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+								</form>
+							  </div>
+							</div>
+						  </div>
+						</div>	
+					  </div>  
+					</div>
+				  </div>
+				  
+<!-- EXPENSES category -->
+				  <div class="card">
+					<div class="card-header" id="headingthree">
+					  <h2 class="mb-0">
+						<button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">
+						  Kategorie wydatków
+						</button>
+					  </h2>
+					</div>
+					
+					<div id="collapsethree" class="collapse {% if show3 %} show {% endif %}" aria-labelledby="headingthree" data-parent="#accordionexample">
+					  <div class="card-body">
+						
+						<table class="table table-sm table-hover table-borderless mb-2">
+							{% for expcategory in exp %}
+								<tr>
+									<td class="table-settings"> {{ expcategory.name }}
+									{% if expcategory.limitExpense is not null %}
+									<br> <span class="limit ml-3">Limit: {{ expcategory.limitExpense }} zł</span>
+									{% endif %}
+									</td>					
+									<td class="table-settings2">
+										<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#limitmodal3{{ expcategory.id }}">
+											Limit
+										</button>
+										
+										<button type="button" class="btn btn-light" data-toggle="modal" data-target="#editmodal3{{ expcategory.id }}">
+											<i class="icon-pencil-alt"></i>
+										</button>
+										
+										<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal3{{ expcategory.id }}">
+											<i class="icon-trash"></i>
+										</button>
+									</td>
+								</tr>
+							
+								<!-- modal limit-->
+								<div class="modal fade" id="limitmodal3{{ expcategory.id }}" tabindex="-1" aria-labelledby="limitmodallabel" aria-hidden="true">
+								  <div class="modal-dialog">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="editmodallabel">Dodaj limit</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="close">
+										  <span aria-hidden="true">&times;</span>
+										</button>
+									  </div>
+									  <div class="modal-body">
+										<div class="modal-text">Podaj limit wydatków w danej kategorii:
+										
+										<form action="/settings/limitExpensesCategory" method="post" >
+											<input type="hidden" value={{ expcategory.id }} name="currentId">
+											<input type="number" step="0.01" class="form-control" placeholder="limit wydatków" name="limit" required>
+											</div>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+										<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+										</form>
+										<form action="/settings/deleteLimitExpensesCategory" method="post" >
+											<input type="hidden" value={{ expcategory.id }} name="currentId">
+											<input class="btn btn-danger" type="submit" value="Usuń limit"/>
+										</form>
+									  </div>
+									</div>
+								  </div>
+								</div>	
+
+								<!-- modal edit-->
+								<div class="modal fade" id="editmodal3{{ expcategory.id }}" tabindex="-1" aria-labelledby="editmodallabel" aria-hidden="true">
+								  <div class="modal-dialog">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="editmodallabel">Zmień nazwę</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="close">
+										  <span aria-hidden="true">&times;</span>
+										</button>
+									  </div>
+									  <div class="modal-body">
+										<div class="modal-text">Podaj nową nazwę:
+										
+										<form action="/settings/updateExpensesCategory" method="post" >
+											<input type="hidden" value={{ expcategory.id }} name="currentId">
+											<input type="text" class="form-control" placeholder="nowa nazwa" name="newName" required>
+											<br>
+											Pamietaj, że wprowadzone zmiany wpłyną na już zapisane wydatki i przychody. 
+											</div>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+										<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+										</form>
+									  </div>
+									</div>
+								  </div>
+								</div>	
+								
+								<!-- modal delete-->
+								<div class="modal fade" id="deletemodal3{{ expcategory.id }}" tabindex="-1" aria-labelledby="deletemodallabel" aria-hidden="true">
+								  <div class="modal-dialog">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="deletemodallabel">Usuń kategorię</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="close">
+											 <span aria-hidden="true">&times;</span>
+										</button>	
+									  </div>
+									  <div class="modal-body modal-text">
+										<form action="/settings/deleteExpensesCategory" method="post" >
+										  <input type="hidden" value={{ expcategory.id }} name="deletedId">
+										  Usunięcie może wywołać zmiany w już zapisanych wydatkach i przychodach. <br>Możesz <b>usunąć</b> całą kategorię wraz ze wszystkimi wydatkami lub <b>przenieść</b> wydatki do innej kategorii.
+									  </div>
+									  <div class="modal-footer">
+										  <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+										  <input class="btn btn-primary" type="submit" value="Usuń"/>
+										</form>
+										
+										<form action="/settings/replaceExpenseCategory" method="post" >
+											<input type="hidden" value={{expcategory.id}} name="deletedId">
+											<input class="btn btn-primary" type="submit" value="Przenieś"/>
+										</form>
+									  </div>
+									</div>
+								  </div>
+								</div>
+							{% endfor %}
+						</table>
+						
+						<button type="table-settings" class="btn btn-light" data-toggle="modal" data-target="#addmodal3">
+							<i class="icon-plus"></i> Dodaj nową kategorię
+						</button>
+	
+						<!-- modal add new-->
+						<div class="modal fade" id="addmodal3" tabindex="-1" aria-labelledby="addmodallabel" aria-hidden="true">
+						  <div class="modal-dialog">
+							<div class="modal-content">
+							  <div class="modal-header">
+								<h5 class="modal-title" id="addmodallabel">Dodaj nową kateogrię wydatków</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+							  </div>
+							  <div class="modal-body">
+								<div class="modal-text">Podaj nazwę nowej kategorii wydatków:
+								  <form action="/settings/addExpensesCategory" method="post" >
+									<input type="text" class="form-control" placeholder="nazwa" name="newName" required>
+								</div>
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+								<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+								</form>
+							  </div>
+							</div>
+						  </div>
+						</div>	
+					  </div>  
+					</div>
+				  </div>
+				  
+<!-- payment methods -->
+				  <div class="card">
+					<div class="card-header" id="headingfour">
+					  <h2 class="mb-0">
+						<button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+						  Metody płatności
+						</button>
+					  </h2>
+					</div>
+					
+					<div id="collapsefour" class="collapse {% if show4 %} show {% endif %}" aria-labelledby="headingfour" data-parent="#accordionexample">
+					  <div class="card-body">
+						
+						<table class="table table-sm table-hover table-borderless mb-2">
+							{% for paymethod in pay %}
+								<tr>
+									<td class="table-settings"> {{ paymethod.name }}</td>					
+									<td class="table-settings2">
+										<button type="button" class="btn btn-light" data-toggle="modal" data-target="#editmodal4{{ paymethod.id }}">
+											<i class="icon-pencil-alt"></i>
+										</button>
+										
+										<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deletemodal4{{ paymethod.id }}">
+											<i class="icon-trash"></i></td>
+										</button>
+								</tr>
+							
+								<!-- modal edit-->
+								<div class="modal fade" id="editmodal4{{ paymethod.id }}" tabindex="-1" aria-labelledby="editmodallabel" aria-hidden="true">
+								  <div class="modal-dialog">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="editmodallabel">Zmień nazwę</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="close">
+										  <span aria-hidden="true">&times;</span>
+										</button>
+									  </div>
+									  <div class="modal-body">
+										<div class="modal-text">Podaj nową nazwę:
+										
+										<form action="/settings/updatePayMethods" method="post" >
+											<input type="hidden" value={{ paymethod.id }} name="currentId">
+											<input type="text" class="form-control" placeholder="nowa nazwa" name="newName" required>
+											<br>
+											Pamietaj, że wprowadzone zmiany wpłyną na już zapisane wydatki i przychody. 
+											</div>
+										</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+										<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+										</form>
+									  </div>
+									</div>
+								  </div>
+								</div>	
+								
+								<!-- modal delete-->
+								<div class="modal fade" id="deletemodal4{{ paymethod.id }}" tabindex="-1" aria-labelledby="deletemodallabel" aria-hidden="true">
+								  <div class="modal-dialog">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="deletemodallabel">Usuń metodę płatności</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="close">
+											 <span aria-hidden="true">&times;</span>
+										</button>	
+									  </div>
+									  <div class="modal-body modal-text">
+										<form action="/settings/deletePayMethods" method="post" >
+										  <input type="hidden" value={{ paymethod.id }} name="deletedId">
+										  Usunięcie może wywołać zmiany w już zapisanych wydatkach i przychodach. <br>Możesz <b>usunąć</b> daną metodę płatności wraz ze wszystkimi wydatkami lub <b>przenieść</b> wydatki do innej metody płatności.
+									  </div>
+									  <div class="modal-footer">
+										  <button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+										  <input class="btn btn-primary" type="submit" value="Usuń"/>
+										</form>
+										<form action="/settings/replacePayMethod" method="post" >
+											<input type="hidden" value={{paymethod.id}} name="deletedId">
+											<input class="btn btn-primary" type="submit" value="Przenieś"/>
+										</form>
+									  </div>
+									</div>
+								  </div>
+								</div>
+							{% endfor %}
+						</table>
+						
+						<button type="table-settings" class="btn btn-light" data-toggle="modal" data-target="#addmodal4">
+							<i class="icon-plus"></i> Dodaj nową metodę
+						</button>
+	
+						<!-- modal add new-->
+						<div class="modal fade" id="addmodal4" tabindex="-1" aria-labelledby="addmodallabel" aria-hidden="true">
+						  <div class="modal-dialog">
+							<div class="modal-content">
+							  <div class="modal-header">
+								<h5 class="modal-title" id="addmodallabel">Dodaj nową metodę płatności</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
+							  </div>
+							  <div class="modal-body">
+								<div class="modal-text">Podaj nazwę nowej metody płatności:
+								  <form action="/settings/addPayMethods" method="post" >
+									<input type="text" class="form-control" placeholder="nazwa" name="newName" required>
+								</div>
+							  </div>
+							  <div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+								<input class="btn btn-primary" type="submit" value="Zapisz zmiany"/>
+								</form>
+							  </div>
+							</div>
+						  </div>
+						</div>	
+					  </div>  
+					</div>
+				  </div>
+				  
+				  
+				  
+				  
+				</div>	
+			</div>
+		</div>
+	  </div>
+	</div>
+</div>
+
+{% endblock %}

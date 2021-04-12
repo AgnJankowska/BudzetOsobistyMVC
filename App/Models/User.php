@@ -311,7 +311,11 @@ class User extends \Core\Model {
 		
 		return $stmt->fetch();
 	}
-		
+	
+
+
+
+		/*
 	//funkcja wykonująca aktualizację danych w bazie danych
 	public function updateProfile($data) {
 		$this->name = $data['name'];
@@ -353,6 +357,6 @@ class User extends \Core\Model {
 			return $stmt->execute();
 		}
 		return false;
-	}
+	}*/
 }
 ?>

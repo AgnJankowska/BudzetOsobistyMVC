@@ -29,6 +29,7 @@ $router->add('password/reset/{token:[\da-f]+}', ['controller'=>'Password', 'acti
 $router->add('signup/activate/{token:[\da-f]+}', ['controller'=>'Signup', 'action'=>'activate']);
 
 $router->add('balance',['controller'=>'Balance','action'=>'form']);
+$router->add('settings',['controller'=>'Settings','action'=>'index']);
 
 $router->dispatch($_SERVER['QUERY_STRING']);
 
