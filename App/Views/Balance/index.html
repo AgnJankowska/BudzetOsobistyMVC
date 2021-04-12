@@ -17,15 +17,19 @@
 {% endblock %}
 
 {% block body %}
- 
- <div class ="index-main row m-0">
-	<div class ="col-sm-12 mb-2 p-0">	
-		{%  for message in flash_messages %}
-			<div class="alert-{{ message.type }} tile2a">
-				{{ message.body }}
-			</div>
-		{% endfor %}
-		<div class="tile2a py-2">	
+
+<div class ="index-main mb-4">
+
+	{%  for message in flash_messages %}
+		<div class="alert-{{ message.type }}">
+			{{ message.body }}
+		</div>
+	{% endfor %}
+
+	<div class ="col-sm-12 p-0">
+		<a href="/" class="back"><i class="icon-left-big"></i></a>
+
+		<div class="py-2">	
 	
 			<span class="fontello_black mr-3"><i class="icon-chart-pie"></i></span>Bilans
 			<div class="col-xs-10 mx-auto">	
@@ -177,9 +181,12 @@
 						{% if savings < 0 %}
 							<div class="text4debet mx-auto"> {{ savings }} </div>
 							<div class="text5debet mx-auto mb-3"> Uważaj, wpadasz w długi </div>
+						{% elseif savings > 0 %}
+							<div class="text4 mx-auto"> {{ savings }} </div>
+							<div class="text5 mx-auto mb-3"> Gratulacje - świetnie zarządzasz finansami </div>			
 						{% else %}
 							<div class="text4 mx-auto"> {{ savings }} </div>
-							<div class="text5 mx-auto mb-3"> Gratulacje - świetnie zarządzasz finansami </div>							
+							<div class="text5 mx-auto mb-3"> Zacznij dodawać wydatki i przychody </div>								
 						{% endif %}
 
 						<div class ="col-sm-12 col-md-6 mb-4 mx-auto">

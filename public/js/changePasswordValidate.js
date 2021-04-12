@@ -16,27 +16,22 @@
 		
 		$(document).ready(function() {
 			//korzystamy z biblioteki walidacyjnej jQuery
-            $('#formPassword').validate({
+            $('#formProfile').validate({
                 //formujemy reguły walidacji do każdego z pól formularza
 				rules: {
 					//korzystamy ze stworzonej funkcji waliduącej validPassword
-                    password: {
+                    newPassword: {
                         required: true,
                         minlength: 6,
 						validPassword: true
                     }
                 },
 				messages: {
-                    password: {
+                    newPassword: {
                         required: 'Pole wymagane',
                         minlength: 'Minimalna ilość znaków to 6',
 						validPassword: 'Minimum jedna cyfra i litera'
                     }
 				}
             });
-			
-			$('#inputPassword').hideShowPassword({
-				show: false,
-				innerToggle: 'focus'
-			});	
         });

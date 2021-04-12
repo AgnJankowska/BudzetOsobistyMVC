@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}ustawienia{% endblock %}
+
+{% block footer %}
+	<script src="/js/hideShowPassword.js"></script>	
+	<script src="/js/signUpValidate.js"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class ="row m-0">
+	<div class ="col-sm-12 col-md-8 col-lg-6 offset-md-1 mt-1 mb-4 mx-auto">	
+		<div class="col-12 tile2a px-0">
+		<a href="/settings" class="back"><i class="icon-left-big"></i></a>
+		
+		<div class="px-3">
+		<span class="fontello_black mr-3"><i class="icon-cogs"></i></span>Ustawienia	
+			<div class="col-xs-10 mx-auto my-4">	
+				<div class="my-3"> Usuwana metoda płatności: <b>{{ pay_deleted_name }}</b></div>		
+			
+				<form action="/settings/changePayMethod" method="post">
+					<div class="form-group">		
+						<label for="category">Wskaż metodę płatności do której przenieść wydatki z usuwanej metody: </label>
+						<select name="category" class="form-control" id="category">
+							{% for payMethod in pay %}
+								<option value={{ payMethod.id }}> 
+									{{ payMethod.name }}
+								</option>
+							{% endfor %}	
+						</select>
+					</div>
+					<input type="hidden" value={{ pay_deleted_ID }} name="deletedId">
+					<a href="/settings"><button type="button" class="btn btn-secondary">Anuluj</button></a>
+					<input class="btn btn-primary" type="submit" value="Przenieś"/>
+					
+				</form>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

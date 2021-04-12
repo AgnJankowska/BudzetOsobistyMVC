@@ -41,4 +41,16 @@ class Expense extends Authenticated {
 			'added_expense' => $this->added_expense
 		]);
 	}
+	
+	public function getAmountOfExpenseThisMonthAction() {
+		$date_start = date('Y-m').'-01';
+		$date_end = date('Y-m-d');
+		$this->expenses = Expenses::getExpenseAssignetToUser(Auth::getUser(), $date_start, $date_end);
+		echo json_encode($this->expenses);		
+	}
+	
+	public function getLimitOfExpenseAction() {		
+		$this->expensesCategory = Tables::getExpenseCategory(Auth::getUser());
+		echo json_encode($this->expensesCategory);
+	}
 }

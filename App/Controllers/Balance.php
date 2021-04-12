@@ -75,4 +75,5 @@ class Balance extends Authenticated {
 	public function jsonEncodeAction() {
 		echo json_encode($_SESSION['chartData']);
 	}
+
 }
